@@ -75,78 +75,76 @@ function ProjectCard({ project, index }) {
   return (
     <div
       id={`project-${project.id}`}
-      className="card group relative overflow-hidden flex flex-col h-full"
+      className="card group relative overflow-hidden flex flex-col h-full bg-surface"
     >
       <span
-        className="absolute top-4 right-6 font-mono font-black text-6xl opacity-[0.04] select-none pointer-events-none"
+        className="absolute top-8 right-8 font-mono font-black text-7xl opacity-[0.03] select-none pointer-events-none"
         style={{ color: project.accent }}
       >
         {project.number}
       </span>
 
       <div
-        className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        className="absolute top-0 left-0 right-0 h-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{ background: `linear-gradient(90deg, transparent, ${project.accent}, transparent)` }}
       />
 
-      <div className="relative z-10 flex-grow">
-        <div className="flex items-start justify-between mb-4">
-          <div>
-            <span className="font-mono text-xs text-muted mb-1 block">{project.number} /</span>
-            <h3 className="text-lg font-bold text-text">{project.title}</h3>
-            <p className="text-xs text-muted font-mono mt-1">{project.subtitle}</p>
-          </div>
+      <div className="relative z-10 flex-grow space-y-6">
+        <div>
+          <span className="font-mono text-sm text-muted mb-2 block">{project.number} /</span>
+          <h3 className="text-xl md:text-2xl font-bold text-text mb-2">{project.title}</h3>
+          <p className="text-sm text-accent font-mono">{project.subtitle}</p>
         </div>
 
-        <p className="text-sm text-text-dim leading-relaxed mb-5">
+        <p className="text-base text-text-dim leading-relaxed">
           {project.description}
         </p>
 
         {project.hasDiagram && (
-          <div className="my-5 p-4 bg-background/50 border border-border/50 rounded-lg font-mono text-xs text-text-dim flex flex-col items-center gap-2">
-            <div className="px-3 py-1 bg-surface border border-border rounded shadow-sm text-accent">API Gateway</div>
-            <div className="w-px h-3 bg-border"></div>
-            <div className="flex gap-3">
-              <div className="px-2 py-1 bg-surface border border-border rounded shadow-sm">Patient Svc</div>
-              <div className="px-2 py-1 bg-surface border border-border rounded shadow-sm">Billing Svc</div>
+          <div className="my-6 p-6 bg-background rounded-xl font-mono text-xs text-text-dim flex flex-col items-center gap-3 border border-border/50">
+            <div className="px-4 py-1.5 bg-surface border border-border rounded-lg shadow-sm text-accent font-semibold">API Gateway</div>
+            <div className="w-px h-4 bg-border"></div>
+            <div className="flex gap-4">
+              <div className="px-3 py-1.5 bg-surface border border-border rounded-lg shadow-sm">Patient Svc</div>
+              <div className="px-3 py-1.5 bg-surface border border-border rounded-lg shadow-sm">Billing Svc</div>
             </div>
-            <div className="w-px h-3 bg-border"></div>
-            <div className="px-3 py-1 border border-blue-500/30 text-blue-400 bg-blue-500/5 rounded shadow-sm w-full text-center">
+            <div className="w-px h-4 bg-border"></div>
+            <div className="px-4 py-1.5 border border-blue-500/30 text-blue-400 bg-blue-500/5 rounded-lg shadow-sm w-full text-center">
               Docker Network
             </div>
           </div>
         )}
 
-        <ul className="space-y-2 mb-6">
+        <ul className="space-y-3">
           {project.features.map(f => (
-            <li key={f} className="flex items-start gap-2 text-xs text-text-dim">
+            <li key={f} className="flex items-start gap-3 text-sm text-text-dim">
               <span className="mt-0.5 flex-shrink-0" style={{ color: project.accent }}>▹</span>
-              {f}
+              <span className="leading-relaxed">{f}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="mt-auto pt-4 border-t border-border/50">
-        <div className="flex flex-wrap gap-2 mb-4">
+      <div className="mt-10 pt-6 border-t border-border">
+        <div className="flex flex-wrap gap-2 mb-6">
           {project.stack.map(tech => (
             <span key={tech} className="tag">{tech}</span>
           ))}
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {project.live && (
             <a
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
               id={`project-${project.id}-live`}
-              className="flex items-center gap-1.5 text-xs font-medium text-text hover:text-accent transition-colors px-3 py-1.5 border border-border rounded-md hover:border-accent/40 bg-surface"
+              className="flex items-center gap-2 text-sm font-medium text-text hover:text-accent transition-colors px-4 py-2 border border-border rounded-lg hover:border-accent/40 bg-background"
             >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                 <polyline points="15 3 21 3 21 9"/>
                 <line x1="10" y1="14" x2="21" y2="3"/>
-              </svg> Live
+              </svg> Live Demo
             </a>
           )}
           <a
@@ -154,9 +152,9 @@ function ProjectCard({ project, index }) {
             target="_blank"
             rel="noopener noreferrer"
             id={`project-${project.id}-github`}
-            className="flex items-center gap-1.5 text-xs font-medium text-text hover:text-accent transition-colors px-3 py-1.5 border border-border rounded-md hover:border-accent/40 bg-surface"
+            className="flex items-center gap-2 text-sm font-medium text-text hover:text-accent transition-colors px-4 py-2 border border-border rounded-lg hover:border-accent/40 bg-background"
           >
-            <GitHubIcon /> Source
+            <GitHubIcon /> Source Code
           </a>
         </div>
       </div>
@@ -172,11 +170,11 @@ export default function Projects() {
         <p className="section-label">Engineering Work</p>
         <h2 className="section-title">Systems & Applications</h2>
         <div className="section-divider"></div>
-        <p className="text-muted text-sm max-w-lg mb-12 leading-relaxed">
+        <p className="text-lg text-text-dim max-w-2xl mb-16 leading-relaxed">
           A selection of robust engineering projects emphasizing clean architecture, system design, and practical utility.
         </p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-2 gap-10">
           {PROJECTS.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}

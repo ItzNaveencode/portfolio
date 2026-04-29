@@ -61,20 +61,19 @@ export default function Contact() {
         <div className="max-w-3xl">
           <div className="grid md:grid-cols-2 gap-10 items-start">
             {/* Left — message */}
-            <div>
-              <p className="text-text-dim leading-relaxed mb-4">
+            <div className="space-y-6">
+              <p className="text-lg text-text-dim leading-relaxed">
                 I'm currently open to{' '}
-                <span className="text-text font-medium">internship opportunities</span>,{' '}
-                <span className="text-text font-medium">junior developer roles</span>, and interesting
-                backend engineering problems to collaborate on.
+                <span className="text-text font-medium">engineering roles</span> and interesting
+                backend architecture problems to collaborate on.
               </p>
-              <p className="text-text-dim leading-relaxed mb-8">
+              <p className="text-lg text-text-dim leading-relaxed">
                 Whether you have a position in mind, a project to discuss, or just want to connect —
                 my inbox is open.
               </p>
 
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent-dim border border-accent/20 text-accent text-sm font-mono">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.8)]"></span>
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 mt-4 rounded-xl bg-accent-dim border border-accent/20 text-accent text-sm font-mono">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
                 Available for opportunities
               </div>
             </div>

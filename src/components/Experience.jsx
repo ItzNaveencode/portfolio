@@ -27,32 +27,32 @@ function TimelineItem({ exp }) {
 
       <div className="card">
         {/* Header */}
-        <div className="flex flex-wrap items-start justify-between gap-2 mb-4">
+        <div className="flex flex-wrap items-start justify-between gap-3 mb-6">
           <div>
-            <h3 className="font-bold text-text text-base">{exp.role}</h3>
-            <p className="text-accent text-sm font-medium mt-0.5">{exp.company}</p>
+            <h3 className="font-bold text-text text-lg">{exp.role}</h3>
+            <p className="text-accent text-sm font-medium mt-1">{exp.company}</p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-xs font-mono text-muted px-2 py-1 border border-border rounded-md">{exp.period}</span>
-            <span className="text-xs font-mono text-accent px-2 py-1 bg-accent-dim border border-accent/20 rounded-md">{exp.type}</span>
+            <span className="text-xs font-mono text-muted px-3 py-1.5 border border-border rounded-lg">{exp.period}</span>
+            <span className="text-xs font-mono text-accent px-3 py-1.5 bg-accent-dim border border-accent/20 rounded-lg">{exp.type}</span>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-sm text-muted leading-relaxed mb-5">{exp.description}</p>
+        <p className="text-base text-muted leading-relaxed mb-6">{exp.description}</p>
 
         {/* Highlights */}
-        <ul className="space-y-2 mb-5">
+        <ul className="space-y-3 mb-6">
           {exp.highlights.map(h => (
-            <li key={h} className="flex items-start gap-2 text-xs text-text-dim">
+            <li key={h} className="flex items-start gap-3 text-sm text-text-dim">
               <span className="text-accent mt-0.5 flex-shrink-0">▹</span>
-              {h}
+              <span className="leading-relaxed">{h}</span>
             </li>
           ))}
         </ul>
 
         {/* Skills */}
-        <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+        <div className="flex flex-wrap gap-2 pt-6 border-t border-border/50">
           {exp.skills.map(s => (
             <span key={s} className="tag">{s}</span>
           ))}

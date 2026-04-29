@@ -46,21 +46,21 @@ const SKILL_GROUPS = [
 
 function SkillGroup({ category, color, icon, skills }) {
   return (
-    <div className="card space-y-5">
-      <div className="flex items-center gap-3 pb-4 border-b border-border/50">
+    <div className="card space-y-6">
+      <div className="flex items-center gap-4 pb-5 border-b border-border/50">
         <div
-          className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+          className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ background: `${color}1a`, border: `1px solid ${color}30`, color }}
         >
           {icon}
         </div>
-        <h3 className="font-semibold text-text text-sm">{category}</h3>
+        <h3 className="font-bold text-text text-lg">{category}</h3>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-3">
         {skills.map(skill => (
           <span 
             key={skill} 
-            className="px-3 py-1.5 text-xs rounded-md bg-surface border border-border text-text-dim hover:text-text transition-colors"
+            className="skill-pill"
           >
             {skill}
           </span>
@@ -79,7 +79,7 @@ export default function Skills() {
         <h2 className="section-title">Technical Stack</h2>
         <div className="section-divider"></div>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {SKILL_GROUPS.map(group => (
             <SkillGroup key={group.category} {...group} />
           ))}
