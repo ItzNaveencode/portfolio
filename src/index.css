@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-text font-sans;
+    min-height: 100vh;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-accent-light;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent/50;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-5xl mx-auto px-6 py-24;
+  }
+
+  .section-label {
+    @apply text-accent font-mono text-sm tracking-widest uppercase mb-3;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-text mb-4;
+  }
+
+  .section-divider {
+    @apply w-12 h-px bg-accent mb-12;
+  }
+
+  .card {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply border-accent/40 shadow-lg shadow-accent/5;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white font-medium text-sm rounded-lg transition-all duration-200 hover:bg-accent-light hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-border text-text-dim font-medium text-sm rounded-lg transition-all duration-200 hover:border-accent/50 hover:text-accent hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .tag {
+    @apply inline-block text-xs font-mono px-2.5 py-1 rounded-md bg-accent-dim text-accent-light border border-accent/20;
+  }
+
+  .nav-link {
+    @apply text-muted hover:text-text transition-colors duration-200 text-sm font-medium;
+  }
+
+  .skill-pill {
+    @apply px-3 py-1.5 text-sm rounded-lg bg-surface border border-border text-text-dim font-mono;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-light via-purple-400 to-indigo-400 bg-clip-text text-transparent;
+  }
+
+  .glow {
+    box-shadow: 0 0 40px rgba(108, 99, 255, 0.12);
+  }
+
+  .animate-in {
+    animation: fadeUp 0.6s ease forwards;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
