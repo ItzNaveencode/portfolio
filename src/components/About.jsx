@@ -1,9 +1,3 @@
-const STATS = [
-  { label: 'Projects Built', value: '3+' },
-  { label: 'Technologies', value: '10+' },
-  { label: 'Focus Area', value: 'Backend' },
-]
-
 const HIGHLIGHTS = [
   {
     icon: (
@@ -42,37 +36,28 @@ export default function About() {
   return (
     <section id="about" className="relative">
       <div className="section-container">
-        <p className="section-label">About Me</p>
-        <h2 className="section-title">Who I Am</h2>
+        <p className="section-label">Background</p>
+        <h2 className="section-title">About Me</h2>
         <div className="section-divider"></div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left — text */}
-          <div className="space-y-5">
+          <div className="space-y-6">
             <p className="text-text-dim leading-relaxed">
-              Hi, I’m Naveen, a <span className="text-text font-medium">final-year Computer Science student</span> with a strong focus on backend development.
+              I am a Backend Developer focused on building robust, scalable infrastructure. I work primarily with <span className="text-accent font-medium">Java</span> and <span className="text-accent font-medium">Spring Boot</span> to design clean REST APIs and architect systems that handle real-world data flows.
             </p>
             <p className="text-text-dim leading-relaxed">
-              I have been working mainly with <span className="text-accent font-medium">Java</span> and <span className="text-accent font-medium">Spring Boot</span>, where I’ve built REST APIs and worked on how data flows through real applications. Recently, I worked on a microservices-based patient management system, where I built multiple services and containerized them using <span className="text-accent font-medium">Docker</span>. This helped me understand service communication, debugging, and how backend systems are structured.
+              My engineering approach centers on strict service boundaries, inter-service communication, and clean contracts. <strong className="text-text font-medium">I enjoy debugging systems and understanding failure cases, not just building features.</strong>
             </p>
             <p className="text-text-dim leading-relaxed">
-              Along with that, I developed an Android application called CivicWatch using Kotlin and Firebase, where I worked on features like location tracking, API integration, and real-time data handling. I also built a developer utility tool called DevTool Converter to solve common data transformation tasks.
+              I actively use AI tools to improve development speed and experiment with new ideas, treating them as productivity multipliers for coding and utility generation.
             </p>
-            <p className="text-text-dim leading-relaxed">
-              I’ve also consistently practiced problem-solving in Java by solving 250+ problems, which improved my logical thinking and debugging skills.
-            </p>
-            <p className="text-text-dim leading-relaxed">
-              Right now, I’m focused on becoming a strong backend engineer by building real systems, understanding architecture, and improving how I design and debug applications.
-            </p>
-
-            {/* Stats row */}
-            <div className="grid grid-cols-3 gap-4 pt-4 border-t border-border/40">
-              {STATS.map(({ label, value }) => (
-                <div key={label} className="text-center">
-                  <p className="text-2xl font-bold text-gradient">{value}</p>
-                  <p className="text-xs text-muted mt-1 font-mono">{label}</p>
-                </div>
-              ))}
+            
+            <div className="p-4 mt-6 bg-accent-dim border border-accent/20 rounded-lg">
+              <p className="text-sm font-mono text-accent-light leading-relaxed">
+                <span className="text-accent mr-2">▹</span>
+                All projects include clean code, documentation, and working implementations on GitHub.
+              </p>
             </div>
           </div>
 
@@ -89,21 +74,6 @@ export default function About() {
                 </div>
               </div>
             ))}
-
-            {/* Code snippet flavor */}
-            <div className="card bg-background font-mono text-xs leading-relaxed overflow-x-auto">
-              <div className="flex gap-2 mb-3">
-                <span className="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
-                <span className="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
-              </div>
-              <p><span className="text-purple-400">const</span> <span className="text-blue-400">naveen</span> <span className="text-text-dim">= {'{'}</span></p>
-              <p className="pl-4"><span className="text-emerald-400">role</span><span className="text-text-dim">: </span><span className="text-amber-300">"Backend Developer"</span><span className="text-text-dim">,</span></p>
-              <p className="pl-4"><span className="text-emerald-400">focus</span><span className="text-text-dim">: </span><span className="text-amber-300">"Scalable Systems"</span><span className="text-text-dim">,</span></p>
-              <p className="pl-4"><span className="text-emerald-400">learning</span><span className="text-text-dim">: </span><span className="text-amber-300">"System Design"</span><span className="text-text-dim">,</span></p>
-              <p className="pl-4"><span className="text-emerald-400">openTo</span><span className="text-text-dim">: </span><span className="text-amber-300">"Opportunities"</span></p>
-              <p><span className="text-text-dim">{'}'}</span></p>
-            </div>
           </div>
         </div>
       </div>

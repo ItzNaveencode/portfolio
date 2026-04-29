@@ -20,34 +20,34 @@ const PROJECTS = [
   {
     id: 'patient-management',
     number: '01',
-    title: 'Patient Management System',
-    subtitle: 'Microservices Architecture',
+    title: 'Microservices-Based Patient Management System',
+    subtitle: 'Spring Boot Architecture',
     description:
-      'A production-style backend system built with Spring Boot microservices. Implements separate services for patient management, billing, and communication — each containerized with Docker and communicating via REST.',
+      'A robust backend system architected to handle complex clinical workflows. Divided into independent services to ensure fault isolation and independent scalability. Containerized entirely with Docker.',
     features: [
-      'Independent patient, billing & communication services',
-      'Docker containerization for each service',
-      'Clean REST API contracts between services',
-      'Service-oriented architecture with clear boundaries',
+      'Designed clear service boundaries for patient, billing, and communication modules',
+      'Implemented inter-service communication using REST APIs',
+      'Ensured consistent deployment environments via Docker containerization',
+      'Applied strong backend architecture and system design thinking',
     ],
     stack: ['Java', 'Spring Boot', 'Microservices', 'Docker', 'REST API'],
     github: 'https://github.com/ItzNaveencode/Patient-management.git',
     accent: '#6c63ff',
+    hasDiagram: true,
   },
   {
     id: 'devtool-converter',
     number: '02',
     title: 'DevTool Converter',
-    subtitle: 'Developer Utility',
+    subtitle: 'Developer Workflow Utility',
     description:
-      'A practical developer utility for data format conversions. Built to eliminate the need for switching between online tools — handles common encoding, decoding, and format transformation tasks right from one place.',
+      'Built to eliminate repetitive developer tasks and data format conversions. It solves real daily friction by providing fast, client-side processing for multiple data structures.',
     features: [
-      'Multi-format data conversion support',
-      'Fast, client-side processing',
-      'Clean, minimal developer UI',
-      'Solves real daily developer friction',
+      'Solves practical developer problems with data transformation',
+      'Explored using AI-assisted workflows to enhance development speed and usability',
+      'Focus on clean architecture and high-performance parsing',
     ],
-    stack: ['React', 'JavaScript', 'REST API', 'Developer Tools'],
+    stack: ['React', 'JavaScript', 'Developer Tools', 'AI-Assisted'],
     github: 'https://github.com/ItzNaveencode/InstantDevToolConverter.git',
     live: 'https://instant-dev-tool-converter.vercel.app',
     accent: '#8b5cf6',
@@ -55,30 +55,28 @@ const PROJECTS = [
   {
     id: 'civicwatch',
     number: '03',
-    title: 'CivicWatch App',
-    subtitle: 'Android Mobile Application',
+    title: 'CivicWatch',
+    subtitle: 'Location & Data Mobile Platform',
     description:
-      'An Android application that enables civic engagement through real-time location tracking and data feeds. Built with Kotlin and Firebase, the app integrates live API data and uses Jetpack Compose for a modern UI.',
+      'A real-world Android application focused on civic data integration. Engineered to handle real-time location tracking and continuous data synchronization with backend APIs.',
     features: [
-      'Real-time location tracking integration',
-      'Firebase backend for live data sync',
-      'REST API integration for live feeds',
-      'Built with Jetpack Compose',
+      'Robust API integration and data parsing logic',
+      'Real-time data handling using Firebase',
+      'System-level thinking applied to mobile location services',
+      'Optimized application behavior and state management',
     ],
-    stack: ['Kotlin', 'Jetpack Compose', 'Firebase', 'Android', 'REST API'],
+    stack: ['Kotlin', 'Firebase', 'REST API', 'System Architecture'],
     github: 'https://github.com/ItzNaveencode',
     accent: '#06b6d4',
   },
 ]
 
 function ProjectCard({ project, index }) {
-  const isEven = index % 2 === 0
   return (
     <div
       id={`project-${project.id}`}
-      className="card group relative overflow-hidden"
+      className="card group relative overflow-hidden flex flex-col h-full"
     >
-      {/* Number watermark */}
       <span
         className="absolute top-4 right-6 font-mono font-black text-6xl opacity-[0.04] select-none pointer-events-none"
         style={{ color: project.accent }}
@@ -86,55 +84,40 @@ function ProjectCard({ project, index }) {
         {project.number}
       </span>
 
-      {/* Top accent line */}
       <div
         className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{ background: `linear-gradient(90deg, transparent, ${project.accent}, transparent)` }}
       />
 
-      <div className="relative z-10">
-        {/* Header */}
-        <div className="flex items-start justify-between mb-3">
+      <div className="relative z-10 flex-grow">
+        <div className="flex items-start justify-between mb-4">
           <div>
             <span className="font-mono text-xs text-muted mb-1 block">{project.number} /</span>
             <h3 className="text-lg font-bold text-text">{project.title}</h3>
-            <p className="text-xs text-muted font-mono mt-0.5">{project.subtitle}</p>
-          </div>
-          <div className="flex items-center gap-2">
-            {project.live && (
-              <a
-                href={project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                id={`project-${project.id}-live`}
-                className="flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors px-2 py-1 border border-border rounded-md hover:border-accent/40"
-              >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                  <polyline points="15 3 21 3 21 9"/>
-                  <line x1="10" y1="14" x2="21" y2="3"/>
-                </svg> Live
-              </a>
-            )}
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              id={`project-${project.id}-github`}
-              className="flex items-center gap-1.5 text-xs text-muted hover:text-accent transition-colors px-2 py-1 border border-border rounded-md hover:border-accent/40"
-            >
-              <GitHubIcon /> Code
-            </a>
+            <p className="text-xs text-muted font-mono mt-1">{project.subtitle}</p>
           </div>
         </div>
 
-        {/* Description */}
-        <p className="text-sm text-muted leading-relaxed mb-5">
+        <p className="text-sm text-text-dim leading-relaxed mb-5">
           {project.description}
         </p>
 
-        {/* Features */}
-        <ul className="space-y-2 mb-5">
+        {project.hasDiagram && (
+          <div className="my-5 p-4 bg-background/50 border border-border/50 rounded-lg font-mono text-xs text-text-dim flex flex-col items-center gap-2">
+            <div className="px-3 py-1 bg-surface border border-border rounded shadow-sm text-accent">API Gateway</div>
+            <div className="w-px h-3 bg-border"></div>
+            <div className="flex gap-3">
+              <div className="px-2 py-1 bg-surface border border-border rounded shadow-sm">Patient Svc</div>
+              <div className="px-2 py-1 bg-surface border border-border rounded shadow-sm">Billing Svc</div>
+            </div>
+            <div className="w-px h-3 bg-border"></div>
+            <div className="px-3 py-1 border border-blue-500/30 text-blue-400 bg-blue-500/5 rounded shadow-sm w-full text-center">
+              Docker Network
+            </div>
+          </div>
+        )}
+
+        <ul className="space-y-2 mb-6">
           {project.features.map(f => (
             <li key={f} className="flex items-start gap-2 text-xs text-text-dim">
               <span className="mt-0.5 flex-shrink-0" style={{ color: project.accent }}>▹</span>
@@ -142,12 +125,39 @@ function ProjectCard({ project, index }) {
             </li>
           ))}
         </ul>
+      </div>
 
-        {/* Stack tags */}
-        <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+      <div className="mt-auto pt-4 border-t border-border/50">
+        <div className="flex flex-wrap gap-2 mb-4">
           {project.stack.map(tech => (
             <span key={tech} className="tag">{tech}</span>
           ))}
+        </div>
+        <div className="flex items-center gap-3">
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              id={`project-${project.id}-live`}
+              className="flex items-center gap-1.5 text-xs font-medium text-text hover:text-accent transition-colors px-3 py-1.5 border border-border rounded-md hover:border-accent/40 bg-surface"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg> Live
+            </a>
+          )}
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            id={`project-${project.id}-github`}
+            className="flex items-center gap-1.5 text-xs font-medium text-text hover:text-accent transition-colors px-3 py-1.5 border border-border rounded-md hover:border-accent/40 bg-surface"
+          >
+            <GitHubIcon /> Source
+          </a>
         </div>
       </div>
     </div>
@@ -157,35 +167,19 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   return (
     <section id="projects" className="relative">
-      {/* Subtle section separator gradient */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="section-container">
-        <p className="section-label">Work</p>
-        <h2 className="section-title">Featured Projects</h2>
+        <p className="section-label">Engineering Work</p>
+        <h2 className="section-title">Systems & Applications</h2>
         <div className="section-divider"></div>
         <p className="text-muted text-sm max-w-lg mb-12 leading-relaxed">
-          A selection of projects that demonstrate my backend engineering skills — from microservices to mobile apps.
+          A selection of robust engineering projects emphasizing clean architecture, system design, and practical utility.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-10 text-center">
-          <a
-            href="https://github.com/ItzNaveencode"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline"
-            id="projects-view-all"
-          >
-            <GitHubIcon />
-            View all repositories
-            <ExternalLinkIcon />
-          </a>
         </div>
       </div>
     </section>

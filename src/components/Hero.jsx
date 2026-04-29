@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden"
     >
       {/* Subtle grid background */}
       <div
@@ -28,7 +28,7 @@ export default function Hero() {
         {/* Status badge */}
         <div className="flex items-center gap-2 mb-8 animate-in opacity-0 stagger-1">
           <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span>
-          <span className="text-xs font-mono text-muted tracking-wider">Available for opportunities</span>
+          <span className="text-xs font-mono text-muted tracking-wider">Available for engineering roles</span>
         </div>
 
         {/* Name + Title */}
@@ -36,20 +36,18 @@ export default function Hero() {
           <p className="text-accent font-mono text-sm tracking-widest uppercase mb-3">
             Hi, I'm
           </p>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-text mb-3 leading-none">
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-text mb-4 leading-none">
             M Naveen
           </h1>
-          <h2 className="text-xl md:text-2xl font-semibold text-text-dim mb-6">
-            Backend-Focused{' '}
-            <span className="text-gradient">Developer</span>
+          <h2 className="text-xl md:text-2xl font-medium text-text-dim mb-8 max-w-3xl leading-snug">
+            Backend Developer building <span className="text-text font-bold">microservices</span> and <span className="text-text font-bold">scalable systems</span>.
           </h2>
         </div>
 
-        {/* Tagline */}
-        <div className="animate-in opacity-0 stagger-3">
-          <p className="text-base md:text-lg text-muted max-w-xl mb-10 leading-relaxed font-mono">
-            <span className="text-accent">{'// '}</span>
-            I build scalable backend systems, APIs, and developer tools.
+        {/* Highlight Tagline */}
+        <div className="animate-in opacity-0 stagger-3 mb-10">
+          <p className="text-base text-muted max-w-2xl leading-relaxed font-mono border-l-2 border-accent pl-4 py-1 bg-gradient-to-r from-accent/5 to-transparent rounded-r-lg">
+            <span className="text-text-dim">▹</span> Recently built a microservices-based patient management system using Spring Boot and Docker.
           </p>
         </div>
 
@@ -74,33 +72,7 @@ export default function Hero() {
             </svg>
             GitHub
           </a>
-          <a href="#" className="btn-outline" id="hero-resume">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-            Resume
-          </a>
         </div>
-
-        {/* Tech Strip */}
-        <div className="mt-16 pt-12 border-t border-border/40 animate-in opacity-0 stagger-4">
-          <p className="text-xs text-muted font-mono mb-4 tracking-widest uppercase">Primary Stack</p>
-          <div className="flex flex-wrap gap-3">
-            {['Java', 'Spring Boot', 'REST APIs', 'Microservices', 'Docker', 'Kotlin'].map(tech => (
-              <span key={tech} className="skill-pill">{tech}</span>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted animate-in opacity-0 stagger-4">
-        <span className="text-xs font-mono tracking-widest">scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-muted/50 to-transparent"></div>
       </div>
     </section>
   )
