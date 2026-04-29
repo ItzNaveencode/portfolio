@@ -40,39 +40,43 @@
 
 @layer components {
   .section-container {
-    @apply max-w-[1100px] mx-auto px-6 py-24 md:py-32;
+    @apply max-w-4xl mx-auto px-6 py-20 relative z-10;
   }
 
   .section-label {
-    @apply text-accent font-mono text-xs md:text-sm tracking-widest uppercase mb-4;
+    @apply text-accent font-mono text-sm tracking-widest uppercase mb-4 text-center block;
   }
 
   .section-title {
-    @apply text-4xl md:text-5xl font-extrabold text-text mb-6;
+    @apply text-4xl md:text-5xl font-extrabold text-text mb-6 text-center;
   }
 
   .section-divider {
-    @apply w-16 h-1 bg-accent mb-16 rounded-full;
+    @apply w-12 h-1 bg-accent mx-auto mb-16 rounded-full opacity-80;
+  }
+
+  .section-separator {
+    @apply absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent;
   }
 
   .card {
-    @apply bg-card border border-border rounded-2xl p-8 transition-all duration-300;
+    @apply bg-surface/50 border border-border/80 rounded-2xl p-8 transition-all duration-300 shadow-sm;
   }
 
   .card:hover {
-    @apply border-accent/40 shadow-xl shadow-accent/5;
+    @apply border-accent/40 shadow-xl shadow-accent/10 -translate-y-1 bg-surface;
   }
 
   .btn-primary {
-    @apply inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium text-sm md:text-base rounded-xl transition-all duration-200 hover:bg-accent-light hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-white font-semibold text-sm md:text-base rounded-xl transition-all duration-200 hover:bg-accent-light hover:-translate-y-0.5 shadow-lg shadow-accent/20 active:translate-y-0;
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 px-6 py-3 border border-border text-text-dim font-medium text-sm md:text-base rounded-xl transition-all duration-200 hover:border-accent/50 hover:text-accent hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center gap-2 px-8 py-3.5 border border-border/80 text-text-dim font-semibold text-sm md:text-base rounded-xl transition-all duration-200 hover:border-accent hover:text-accent hover:-translate-y-0.5 bg-surface/50 hover:bg-surface active:translate-y-0;
   }
 
   .tag {
-    @apply inline-block text-xs font-mono px-3 py-1.5 rounded-lg bg-accent-dim text-accent-light border border-accent/20;
+    @apply inline-block text-xs font-mono px-3 py-1.5 rounded-lg bg-accent/5 text-accent border border-accent/20;
   }
 
   .nav-link {
@@ -80,7 +84,7 @@
   }
 
   .skill-pill {
-    @apply px-4 py-2 text-sm rounded-xl bg-surface border border-border text-text-dim font-mono hover:text-text transition-colors;
+    @apply px-4 py-2 text-sm rounded-xl bg-background border border-border/80 text-text-dim font-mono hover:text-text hover:border-accent/40 transition-colors shadow-sm;
   }
 }
 

@@ -165,7 +165,7 @@ function ProjectCard({ project, index }) {
 export default function Projects() {
   return (
     <section id="projects" className="relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="section-separator" />
       <div className="section-container">
         <p className="section-label">Engineering Work</p>
         <h2 className="section-title">Systems & Applications</h2>

@@ -65,7 +65,7 @@ function TimelineItem({ exp }) {
 export default function Experience() {
   return (
     <section id="experience" className="relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="section-separator" />
       <div className="section-container">
         <p className="section-label">Background</p>
         <h2 className="section-title">Experience</h2>

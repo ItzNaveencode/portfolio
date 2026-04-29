@@ -1,7 +1,7 @@
 export default function AiTools() {
   return (
     <section id="ai-tools" className="relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="section-separator" />
       <div className="section-container">
         <p className="section-label">Workflow</p>
         <h2 className="section-title">AI & Tools</h2>

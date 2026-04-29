@@ -73,7 +73,7 @@ function SkillGroup({ category, color, icon, skills }) {
 export default function Skills() {
   return (
     <section id="skills" className="relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="section-separator" />
       <div className="section-container">
         <p className="section-label">Expertise</p>
         <h2 className="section-title">Technical Stack</h2>
